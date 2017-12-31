@@ -7,6 +7,10 @@ import (
 	pb "github.com/hyperledger/fabric/protos/peer"
 )
 
+/*
+	Chaincode
+*/
+
 // SimpleChaincode representing a class of chaincode
 type SimpleChaincode struct{}
 
@@ -34,6 +38,9 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	return shim.Success([]byte("Invoke"))
 }
 
+/*
+	Chaincode process entry point
+*/
 func main() {
 	err := shim.Start(new(SimpleChaincode))
 	if err != nil {
